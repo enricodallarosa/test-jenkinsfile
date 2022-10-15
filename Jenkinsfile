@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'test pipeline'
+        node(label: 'agent1') {
+          isUnix()
+        }
+
       }
     }
 
