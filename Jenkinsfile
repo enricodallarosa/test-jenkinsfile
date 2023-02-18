@@ -24,7 +24,7 @@ pipeline {
                             sshCommand remote: remote, command: "cd $baseDir && copy script.bat $buildDirName"
                             sshCommand remote: remote, command: "cd $baseDir && copy windows_text.txt $buildDirName"
                             //
-                            sshPut remote: remote, from: "linux_text.txt", into: "$workingDir/linux_text.txt"
+                            sshPut remote: remote, from: "../linux_text.txt", into: "$workingDir/linux_text.txt"
                             sshCommand remote: remote, command: "cd $workingDir && script.bat"
                             sshGet remote: remote, from: "$workingDir/out.txt", into: "out.txt", override: true
                             sshRemove remote: remote, path: "$workingDir/out.txt"
