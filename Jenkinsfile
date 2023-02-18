@@ -14,7 +14,7 @@ pipeline {
                       remote.host = '10.39.4.105'
                       remote.allowAnyHosts = true
                       baseDir = "/Users/daen/jenkins_agent_test_data"
-                      buildDirName = "$BUILD_ID"
+                      buildDirName = "$BRANCH_NAME-$BUILD_ID"
                       workingDir = "$baseDir/$buildDirName"
                       withCredentials([sshUserPrivateKey(credentialsId: 'agent-windows-105', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
                           remote.user = userName
