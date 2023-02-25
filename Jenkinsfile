@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 script {
+                      pwd()
                       def remote = [:]
                       //remote.name = 'windows-10.39.4.105-ssh'
                       remote.name = '10.39.4.105'
